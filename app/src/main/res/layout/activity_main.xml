@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.rafasalas.mandala.MainActivity"
+    android:background="#524f4f">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="left|top"
+        android:id="@+id/Grupotipo"
+        android:layout_row="0"
+        android:layout_column="0">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Triangulos"
+            android:id="@+id/radio1"
+            android:checked="true"
+            android:textColor="#ffffff" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Circulos"
+            android:id="@+id/radio2"
+            android:textColor="#ffffff" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cuadrados"
+            android:id="@+id/radio3"
+            android:checked="false"
+            android:textColor="#ffffff" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raro"
+            android:id="@+id/radio4"
+            android:checked="false"
+            android:textColor="#ffffff" />
+    </RadioGroup>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resistencia"
+        android:id="@+id/resistencia"
+        android:checked="true"
+        android:layout_gravity="right"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_below="@+id/Grupotipo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ffffff" />
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Muelle"
+        android:id="@+id/muelle"
+        android:checked="true"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:layout_below="@+id/resistencia"
+        android:layout_alignParentLeft="true"
+        android:layout_alignEnd="@+id/resistencia"
+        android:textColor="#ffffff" />
+
+
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/r"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/Vamos" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g"
+        android:layout_below="@+id/r"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/Vamos" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b"
+        android:layout_below="@+id/g"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/Vamos"
+        android:indeterminate="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vamos!!!"
+        android:id="@+id/Vamos"
+        android:layout_row="6"
+        android:layout_column="0"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

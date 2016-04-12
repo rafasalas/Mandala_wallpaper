@@ -32,7 +32,7 @@ public class Mandala {
     int incremento;
     int masa, inc_masa;
 
-    Mandala(PVector center,int nu_vertex, int layer, int radio, int anchura, int masa_inicial, int paso_masa, boolean rozamiento, float coef_roz, boolean muelle, float kelast){
+    Mandala(PVector center,int nu_vertex, int layer, int radio, int anchura, int masa_inicial, int paso_masa, boolean rozamiento, float coef_roz, boolean muelle, float kelast, float limitx, float limity){
         centro=center;
         numerovertices=nu_vertex;
         capas=layer;
@@ -56,6 +56,9 @@ public class Mandala {
             Vtemp.muelle=muelle;
             Vtemp.kmuelle=kelast;
             Vtemp.masa=masa;
+            if (limitx>0 && limity>0){
+                Vtemp.boxed(true, limitx,limity);
+            }
             //cuidadin
             //Vtemp.cuerda=true;
             //cuidadin
@@ -140,7 +143,7 @@ public class Mandala {
                     //triangulo lleno
                     case "Circulos":
                     //circle
-                    canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.75, paint);
+                    canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.20, paint);
                     //circle
                     break;
                     //aquare

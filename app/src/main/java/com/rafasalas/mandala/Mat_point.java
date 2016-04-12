@@ -15,8 +15,8 @@ public class Mat_point {
     PVector posicion, velocidad, aceleracion;
     PVector ancla;
     float masa, coto,  factor_rozamiento, kmuelle;
-    boolean resistencia, muelle, cuerda;
-    float limite;
+    boolean resistencia, muelle, cuerda, boxed;
+    float limite, limitx, limity;
     Mat_point (PVector pos, float peso){
         posicion=pos;
         ancla=new PVector(posicion.x,posicion.y);
@@ -30,8 +30,15 @@ public class Mat_point {
         resistencia=false;
         cuerda=false;
         limite=50;
-    }
+        boxed=false;
+        limitx=limity=0;
 
+    }
+    void boxed( boolean isboxed, float x, float y){
+                        boxed=isboxed;
+                        limitx=x;
+                        limity=y;
+        }
     void acelerar(PVector acelerador) {
         PVector a=PVector.mult(acelerador, 1/masa);
         aceleracion.add(a);
@@ -69,9 +76,25 @@ public class Mat_point {
 
         posicion.add(velocidad);
         aceleracion.mult(0);
+        if(boxed){   if (posicion.x > limitx ) {
+            velocidad.x = velocidad.x*-1;
+            posicion.x=limitx;
+        }
+            if ( posicion.x < 0) {
+                velocidad.x = velocidad.x*-1;
+                posicion.x=0;
+            }
+            if (posicion.y > limity ) {
+                velocidad.y = velocidad.y*-1;
+                posicion.y=limity;
+            }
+            if (posicion.y < 0) {
+                velocidad.y = velocidad.y*-1;
+                posicion.y=0;
+            }
+        }}
 
 
-    }
 
 
 

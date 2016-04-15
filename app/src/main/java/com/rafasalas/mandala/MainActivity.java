@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton radiotipo;
     private Button vamos;
     private Switch muelle, resistencia;
+    private SeekBar red, green, blue=null;
     private boolean esmuelle, tieneresistencia;
-
+    private int valR, valG, valB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +32,64 @@ public class MainActivity extends AppCompatActivity {
 
         muelle = (Switch) findViewById(R.id.muelle);
         resistencia = (Switch) findViewById(R.id.resistencia);
+        red=(SeekBar) findViewById(R.id.r);
+        green=(SeekBar) findViewById(R.id.g);
+        blue=(SeekBar) findViewById(R.id.b);
         esmuelle=tieneresistencia=true;
        muelle.setChecked(true);
         resistencia.setChecked(true);
         addlistenerOnButton();
+
+
+
+        red.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+            //valR = ((progress/100)*255);
+                valR = (progress*255)/100;
+                Log.i("en cambio","prog "+progress);
+                Log.i("en cambio","val "+valR);
+
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        green.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                valG = (progress*255)/100;}
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        blue.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                valB = (progress*255)/100;;}
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         muelle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
@@ -62,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
     public void addlistenerOnButton(){
 
                                 grupotipo = (RadioGroup) findViewById(R.id.Grupotipo);
@@ -84,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
                                                             dataglobal.settipo(clase);
                                                             dataglobal.setmuelle(esmuelle);
                                                             dataglobal.setresistencia(tieneresistencia);
+                                                            Log.i(" en inicio","rojo "+valR);
+                                                            dataglobal.setcolor(valR,valG, valB);
                                                             WallpaperManager wallcachas=WallpaperManager.getInstance(getApplicationContext());
                                                             try{
 

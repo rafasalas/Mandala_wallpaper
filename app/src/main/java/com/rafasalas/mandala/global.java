@@ -11,7 +11,7 @@ public class global extends Application{
     private boolean muelle;
     private boolean resistencia;
 
-
+    private int r,g,b=0;
 
     public String gettipo() {
 
@@ -44,5 +44,17 @@ public class global extends Application{
         resistencia=aresistencia;
 
     }
+
+    public void setcolor(int red, int green, int blue){
+        r=red;
+        g=green;
+        b=blue;
+        }
+    public int getred(){return r;}
+    public int getgreen(){return g;}
+    public int getblue(){return b;}
+
+
+
 
 }

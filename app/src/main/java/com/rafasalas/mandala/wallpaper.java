@@ -26,6 +26,7 @@ public class wallpaper extends WallpaperService {
     private Context context;
     private String opcion;
     private boolean muelle, resistencia;
+    private int rojo, verde, azul;
     //private Intent intent;
 
 
@@ -67,6 +68,10 @@ public class wallpaper extends WallpaperService {
             opcion=dataglobal.gettipo();
             muelle=dataglobal.getmuelle();
             resistencia=dataglobal.getresistencia();
+            rojo=dataglobal.getred();
+            verde=dataglobal.getgreen();
+            azul=dataglobal.getblue();
+            Log.i("   en wallpaper","rojo "+rojo);
             //Log.i("butt", "hallegado " + opcion);
 
             mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
@@ -154,6 +159,7 @@ public class wallpaper extends WallpaperService {
 
                 //rebota.draw(canvas, width, height);
                 lienzotrabajo.mandy.actualiza(muelle, resistencia);
+                lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).35, false);
                 lienzotrabajo.actualiza_atractor(gravedad);
                 lienzotrabajo.draw(canvas, width, height,opcion);
                 canvas.restore();

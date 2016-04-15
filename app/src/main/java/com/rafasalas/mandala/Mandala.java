@@ -143,7 +143,7 @@ public class Mandala {
                     //triangulo lleno
                     case "Circulos":
                     //circle
-                    canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.20, paint);
+                    canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.50, paint);
                     //circle
                     break;
                     //aquare

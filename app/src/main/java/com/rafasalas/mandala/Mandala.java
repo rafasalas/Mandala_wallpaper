@@ -99,7 +99,7 @@ public class Mandala {
 
         paint.setStyle(Style.FILL);
         for (int i=0; i<(numerovertices*capas-1); i++){
-
+            if (i==0){puntocolor Vtemp0=vertice.get(0);} else {vertice.get(i-1);}
             puntocolor Vtemp1=vertice.get(i);
             puntocolor Vtemp2=vertice.get(i+1);
             contador++;
@@ -143,13 +143,13 @@ public class Mandala {
                     //triangulo lleno
                     case "Circulos":
                     //circle
-                    canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.50, paint);
+                    canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.25, paint);
                     //circle
                     break;
                     //aquare
                     //default:
                     case "Cuadrados":
-                    canvas.drawRect(Vtemp1.posicion.x, Vtemp1.posicion.y, Vtemp1.posicion.x + (masa * (float) 0.25), Vtemp1.posicion.y + (masa * (float) 0.25), paint);
+                    canvas.drawRect(Vtemp1.posicion.x, Vtemp1.posicion.y, Vtemp1.posicion.x + (masa * (float) 0.9), Vtemp1.posicion.y + (masa * (float) 0.9), paint);
                     break;
                     //square
                     case "Raro":

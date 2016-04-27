@@ -144,6 +144,8 @@ public class Mandala {
                     case "Circulos":
                     //circle
                     canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.25, paint);
+                        paint.setStrokeWidth(masa/10);
+                    canvas.drawLine(Vtemp_half.posicion.x,Vtemp_half.posicion.y, Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
                     //circle
                     break;
                     //aquare
@@ -153,15 +155,23 @@ public class Mandala {
                     break;
                     //square
                     case "Raro":
-                        Path path2 = new Path();
-                        path2.setFillType(Path.FillType.EVEN_ODD);
-                        path2.moveTo(Vtemp1.posicion.x, Vtemp1.posicion.y);
-                        path2.cubicTo(Vtemp1.posicion.x, Vtemp1.posicion.y, Vtemp_half.posicion.x,Vtemp_half.posicion.y,Vtemp2.posicion.x,Vtemp2.posicion.y);
+                        //Path path2 = new Path();
+                        //path2.setFillType(Path.FillType.EVEN_ODD);
+                        //path2.moveTo(Vtemp1.posicion.x, Vtemp1.posicion.y);
+                        //path2.cubicTo(Vtemp1.posicion.x, Vtemp1.posicion.y, Vtemp_half.posicion.x,Vtemp_half.posicion.y,Vtemp2.posicion.x,Vtemp2.posicion.y);
 
 
                         //path.close();
 
-                        canvas.drawPath(path2, paint);
+                       // canvas.drawPath(path2, paint);
+                        //paint.setStrokeWidth(5);
+                        paint.setStrokeWidth(masa/10);
+                        canvas.drawLine(Vtemp1.posicion.x,Vtemp1.posicion.y,Vtemp_half.posicion.x,Vtemp_half.posicion.y, paint);
+                        canvas.drawLine(Vtemp_half.posicion.x,Vtemp_half.posicion.y, Vtemp2.posicion.x,Vtemp2.posicion.y,paint);
+                        canvas.drawLine(Vtemp2.posicion.x,Vtemp2.posicion.y,Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
+
+
+
                         break;
                 }
             }

@@ -79,7 +79,7 @@ public class lienzo{
         //llamamos al mandala
         //Mandala(PVector center,int nu_vertex, int layer, int radio, int anchura, int masa_inicial, int paso_masa, boolean rozamiento, float coef_roz, boolean muelle, float kelast)
         //mandy2=new Mandala(centro, 30,12,0,25,2, 20, true, (float).005, true,(float).002);
-        mandy=new Mandala(centro, 30,6,0,25,60,-5, true, (float).01, false,(float).001, width, height);
+        mandy=new Mandala(centro, 30,10,0,25,60,-5, true, (float).008, true,(float).001, width, height);
         mandy.monocolor(93,76,119,(float).35, false);
        // mandy.monocolor(203,102,67,(float).35, true);
 

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         green=(SeekBar) findViewById(R.id.g);
         blue=(SeekBar) findViewById(R.id.b);
         esmuelle=tieneresistencia=true;
-       muelle.setChecked(true);
+        muelle.setChecked(true);
         resistencia.setChecked(true);
         addlistenerOnButton();
 
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void addlistenerOnButton(){
 
-                                grupotipo = (RadioGroup) findViewById(R.id.Grupotipo);
+                                //grupotipo = (RadioGroup) findViewById(R.id.Grupotipo);
                                 vamos = (Button) findViewById(R.id.Vamos);
 
        vamos.setOnClickListener(new OnClickListener() {
@@ -134,15 +134,15 @@ public class MainActivity extends AppCompatActivity {
                                                         public void onClick(View v) {
 
                                                                 // get selected radio button from radioGroup
-                                                                int selectedId = grupotipo.getCheckedRadioButtonId();
+                                                                //int selectedId = grupotipo.getCheckedRadioButtonId();
 
                                                                 // find the radiobutton by returned id
-                                                                radiotipo = (RadioButton) findViewById(selectedId);
-                                                           String clase = radiotipo.getText().toString();
+                                                                //radiotipo = (RadioButton) findViewById(selectedId);
+                                                           //String clase = radiotipo.getText().toString();
                                                            // Log.i("butt", "Selecionado " + selectedId);
                                                             //Log.i("butt", "Selecionado " + radiotipo.getText());
                                                             final global dataglobal = (global) getApplicationContext();
-                                                            dataglobal.settipo(clase);
+                                                            dataglobal.settipo("Circulos");
                                                             dataglobal.setmuelle(esmuelle);
                                                             dataglobal.setresistencia(tieneresistencia);
                                                             Log.i(" en inicio","rojo "+valR);

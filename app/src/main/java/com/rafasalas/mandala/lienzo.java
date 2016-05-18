@@ -97,7 +97,8 @@ public class lienzo{
 
         canvas.drawColor(0xFF1DDDDF);
         paint.setShader(new LinearGradient(0, 0, 0, height, Color.BLACK, Color.WHITE, Shader.TileMode.MIRROR));
-        fondopaint.setShader(new RadialGradient(width / 2, height / 2, width - (width / 4), 0xff718fc6, 0xff303a64, Shader.TileMode.MIRROR));
+        //fondopaint.setShader(new RadialGradient(width / 2, height / 2, width - (width / 4), 0xff718fc6, 0xff303a64, Shader.TileMode.MIRROR));
+        fondopaint.setShader(new RadialGradient(width / 2, height / 2, width - (width / 4), 0xff555555, 0xff000000, Shader.TileMode.MIRROR));
         canvas.drawPaint(fondopaint);
        // At.visible(canvas);
         //mandy.centro.x=width/ 2;

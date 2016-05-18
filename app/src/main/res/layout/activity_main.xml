@@ -10,45 +10,7 @@
     tools:context="com.rafasalas.mandala.MainActivity"
     android:background="#524f4f">
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:gravity="left|top"
-        android:id="@+id/Grupotipo"
-        android:layout_row="0"
-        android:layout_column="0">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Triangulos"
-            android:id="@+id/radio1"
-            android:checked="true"
-            android:textColor="#ffffff" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Circulos"
-            android:id="@+id/radio2"
-            android:textColor="#ffffff" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cuadrados"
-            android:id="@+id/radio3"
-            android:checked="false"
-            android:textColor="#ffffff" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Raro"
-            android:id="@+id/radio4"
-            android:checked="false"
-            android:textColor="#ffffff" />
-    </RadioGroup>
 
     <Switch
         android:layout_width="wrap_content"

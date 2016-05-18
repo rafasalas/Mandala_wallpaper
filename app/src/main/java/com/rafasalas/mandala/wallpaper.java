@@ -20,6 +20,8 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.os.Handler;
 
+import java.util.Random;
+
 import processing.core.PVector;
 
 public class wallpaper extends WallpaperService {
@@ -56,6 +58,8 @@ public class wallpaper extends WallpaperService {
         private float mSensorX;
         private float mSensorY;
         private float mSensorZ;
+        private boolean cambio_muelle, cambio_resistencia;
+        private float contador, limite_contador;
         //private int opcion;
         //Variables acelerometro
 
@@ -71,9 +75,11 @@ public class wallpaper extends WallpaperService {
             rojo=dataglobal.getred();
             verde=dataglobal.getgreen();
             azul=dataglobal.getblue();
-            Log.i("   en wallpaper","rojo "+rojo);
-            //Log.i("butt", "hallegado " + opcion);
 
+            //Log.i("   en wallpaper","rojo "+rojo);
+            //Log.i("butt", "hallegado " + opcion);
+            contador=0;
+            limite_contador=600;
             mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
             mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             //acelerometro
@@ -156,7 +162,19 @@ public class wallpaper extends WallpaperService {
                 canvas.save();
                 int width=canvas.getWidth();
                 int height=canvas.getHeight();
+                Random rnd=new Random();
 
+                //TEMPORIZADOR DE DISPARO
+                contador++;
+                if (contador>limite_contador){
+                    contador=0;
+                    if (muelle==true){limite_contador=300;} else {limite_contador=600;}
+                  // resistencia=!resistencia;
+                    muelle=!muelle;
+                    if(rnd.nextInt(100)<50){resistencia=!resistencia;}
+                }
+                Log.i("  contador","vlaor "+contador);
+                Log.i("  contador", "resistencia " + resistencia);
                 //rebota.draw(canvas, width, height);
                 lienzotrabajo.mandy.actualiza(muelle, resistencia);
                 lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).35, false);

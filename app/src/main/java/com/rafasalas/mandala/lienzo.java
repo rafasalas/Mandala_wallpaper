@@ -70,7 +70,7 @@ public class lienzo{
         At=new Atractor(1);
         finger=new Atractor(4);
         At.sentido=-1;
-        finger.sentido=-1;
+        finger.sentido=1;
         centro=new PVector(width/2, height/2);
         ancla_atractor=new Mat_point(centro,50);
         ancla_atractor.muelle=true;

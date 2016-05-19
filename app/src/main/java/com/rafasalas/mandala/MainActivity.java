@@ -145,7 +145,10 @@ public class MainActivity extends AppCompatActivity {
                                                             dataglobal.settipo("Circulos");
                                                             dataglobal.setmuelle(esmuelle);
                                                             dataglobal.setresistencia(tieneresistencia);
-                                                            Log.i(" en inicio","rojo "+valR);
+                                                            dataglobal.setdeditosx(0);
+                                                            dataglobal.setdeditosy(0);
+                                                            dataglobal.sethaydeditos(false);
+                                                            //Log.i(" en inicio","rojo "+valR);
                                                             dataglobal.setcolor(valR,valG, valB);
                                                             WallpaperManager wallcachas=WallpaperManager.getInstance(getApplicationContext());
                                                             try{

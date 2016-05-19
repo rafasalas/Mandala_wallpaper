@@ -65,10 +65,13 @@ public class wallpaper extends WallpaperService {
 
         private lienzo lienzotrabajo;
         private PVector gravedad;
-
+        //finger
+       // context= getApplicationContext();
+        final global dataglobal = (global) getApplicationContext();
+        //finger
         private wallpaperEngine() {
-            context= getApplicationContext();
-            final global dataglobal = (global) getApplicationContext();
+             context= getApplicationContext();
+            //final global dataglobal = (global) getApplicationContext();
             opcion=dataglobal.gettipo();
             muelle=dataglobal.getmuelle();
             resistencia=dataglobal.getresistencia();
@@ -117,8 +120,8 @@ public class wallpaper extends WallpaperService {
             gravedad.mult((10-mSensorZ)*50);
 
             //This is your Accelerometer X,Y,Z values
-            Log.d("sensor", "X: " + mSensorX + ", Y: " + mSensorY + ", Z: " + mSensorZ);
-            Log.d("Vector", "X: " + gravedad.x + ", Y: " + gravedad.y);
+            //Log.d("sensor", "X: " + mSensorX + ", Y: " + mSensorY + ", Z: " + mSensorZ);
+           // Log.d("Vector", "X: " + gravedad.x + ", Y: " + gravedad.y);
         }
 
         @Override
@@ -144,7 +147,19 @@ public class wallpaper extends WallpaperService {
 
 
         }
+        //finger
+        @Override
+        public Bundle onCommand(String action, int x, int y, int z,
+                                Bundle extras, boolean resultRequested) {
 
+            if (action.equals("android.wallpaper.tap")) {
+                dataglobal.sethaydeditos(true);
+                dataglobal.setdeditosx(x);
+                dataglobal.setdeditosy(y);
+            }
+            return super.onCommand(action, x, y, z, extras, resultRequested);
+        }
+        //finger
         private Runnable drawNucleus = new Runnable() {
             @Override
             public void run() {

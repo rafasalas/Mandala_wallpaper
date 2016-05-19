@@ -37,12 +37,16 @@ public class lienzo{
     private PVector centro, centro2;
     Mandala mandy, mandy2;
     private Atractor At;
+    private Atractor finger;
     private  Mat_point ancla_atractor;
     private Paint paint, fondopaint;
     private int lienzo_width, lienzo_height;
+    private int xfinger, yfinger;
+    private boolean hayfinger;
     //private Path linea;
 
-
+    //final global dataglobal = (global) getApplicationContext();
+    final global dataglobal;
 
 
 
@@ -55,15 +59,18 @@ public class lienzo{
 
         //Typeface tipoduro= Typeface.createFromAsset(context.getAssets(), "fonts/Oswald.ttf");
         //super(context);
-
+        //finger
+        // context= getApplicationContext();
+        dataglobal = (global) context;
+        //finger
 
         paint = new Paint();
         fondopaint=new Paint();
 
         At=new Atractor(1);
-
+        finger=new Atractor(4);
         At.sentido=-1;
-
+        finger.sentido=-1;
         centro=new PVector(width/2, height/2);
         ancla_atractor=new Mat_point(centro,50);
         ancla_atractor.muelle=true;
@@ -103,6 +110,12 @@ public class lienzo{
        // At.visible(canvas);
         //mandy.centro.x=width/ 2;
         //mandy.centro.y=height/2;
+       if (dataglobal.gethaydeditos()){
+           dataglobal.sethaydeditos(false);
+           finger.posicion.x=dataglobal.getdeditosx();
+           finger.posicion.y=dataglobal.getdeditosy();
+           mandy.atraccion(finger);
+            }
         mandy.atraccion(At);
        // mandy2.atraccion(At);
         //dibujamos mandala

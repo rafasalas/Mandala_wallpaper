@@ -12,6 +12,27 @@ public class global extends Application{
     private boolean resistencia;
 
     private int r,g,b=0;
+    //finger
+
+    private int deditosx, deditosy;
+    private boolean haydeditos;
+    public boolean gethaydeditos(){return haydeditos;}
+    public int getdeditosx(){return deditosx;}
+    public int getdeditosy(){return deditosy;}
+    public void sethaydeditos(boolean hay){haydeditos=hay;}
+    public void setdeditosx(int x){deditosx=x;}
+    public void setdeditosy(int y){deditosy=y;}
+
+
+
+    //fin finger
+
+
+
+
+
+
+
 
     public String gettipo() {
 

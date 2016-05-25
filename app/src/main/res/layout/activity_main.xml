@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.rafasalas.mandala.MainActivity"
-    android:background="#524f4f">
+    android:background="#000000">
 
 
 
@@ -45,8 +45,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/r"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/Vamos" />
+        android:layout_alignParentStart="true" />
 
     <SeekBar
         android:layout_width="wrap_content"

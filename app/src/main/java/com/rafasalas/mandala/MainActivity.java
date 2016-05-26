@@ -1,13 +1,16 @@
 package com.rafasalas.mandala;
 
+import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.pm.ActivityInfo;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
@@ -16,7 +19,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Switch;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private RadioGroup grupotipo;
     private RadioButton radiotipo;
@@ -28,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Set portrait orientation
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        // Hide title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
         setContentView(R.layout.activity_main);
 
         muelle = (Switch) findViewById(R.id.muelle);
@@ -46,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
             //valR = ((progress/100)*255);
                 valR = (progress*255)/100;
-                Log.i("en cambio","prog "+progress);
-                Log.i("en cambio","val "+valR);
+                //Log.i("en cambio","prog "+progress);
+               // Log.i("en cambio","val "+valR);
 
 
             }
@@ -161,12 +170,14 @@ public class MainActivity extends AppCompatActivity {
                                                                         new ComponentName(MainActivity.this, wallpaper.class));
                                                                 //stopService(intent);
                                                                 startActivity(intent);
+                                                                finish();
                                                             }
                                                             catch(Exception e){
 
                                                                 Intent intent = new Intent();
                                                                 intent.setAction(wallcachas.ACTION_LIVE_WALLPAPER_CHOOSER);
                                                                 startActivity(intent);
+                                                                finish();
                                                             }
 
 

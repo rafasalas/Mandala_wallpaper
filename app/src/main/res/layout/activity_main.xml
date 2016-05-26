@@ -45,7 +45,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/r"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/Vamos" />
 
     <SeekBar
         android:layout_width="wrap_content"

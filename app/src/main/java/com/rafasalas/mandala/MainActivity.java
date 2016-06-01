@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
     private RadioGroup grupotipo;
     private RadioButton radiotipo;
     private Button vamos;
-    private Switch muelle, resistencia;
+    //private Switch muelle, resistencia;
     private SeekBar red, green, blue=null;
     private boolean esmuelle, tieneresistencia;
     private int valR, valG, valB;
@@ -39,14 +39,14 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        muelle = (Switch) findViewById(R.id.muelle);
-        resistencia = (Switch) findViewById(R.id.resistencia);
+        // muelle = (Switch) findViewById(R.id.muelle);
+        //resistencia = (Switch) findViewById(R.id.resistencia);
         red=(SeekBar) findViewById(R.id.r);
         green=(SeekBar) findViewById(R.id.g);
         blue=(SeekBar) findViewById(R.id.b);
         esmuelle=tieneresistencia=true;
-        muelle.setChecked(true);
-        resistencia.setChecked(true);
+        //muelle.setChecked(true);
+       // resistencia.setChecked(true);
         addlistenerOnButton();
 
 
@@ -99,34 +99,34 @@ public class MainActivity extends Activity {
 
             }
         });
-        muelle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        //muelle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView,
-                                         boolean isChecked) {
+           // @Override
+           // public void onCheckedChanged(CompoundButton buttonView,
+                                       //  boolean isChecked) {
 
-                if (isChecked) {
-                    esmuelle = true;
-                } else {
-                    esmuelle = false;
-                }
+              //  if (isChecked) {
+        //  esmuelle = true;
+        // } else {
+        //  esmuelle = false;
+        //  }
 
-            }
-        });
-        resistencia.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        //  }
+        // });
+        // resistencia.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView,
-                                         boolean isChecked) {
+        //@Override
+        //public void onCheckedChanged(CompoundButton buttonView,
+        //                           boolean isChecked) {
 
-                if (isChecked) {
-                    tieneresistencia=true;
-                } else {
-                    tieneresistencia=false;
-                }
+        //   if (isChecked) {
+        //       tieneresistencia=true;
+        //   } else {
+        //     tieneresistencia=false;
+        //  }
 
-            }
-        });
+        //   }
+        // });
     }
 
 

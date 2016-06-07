@@ -202,9 +202,9 @@ public class Mandala {
         factorr=(int)(((el_mayor-r)/100)*fact);
         factorg=(int)(((el_mayor-g)/100)*fact);
         factorb=(int)(((el_mayor-b)/100)*fact);
-        Log.i("color","Factor Rojo "+factorr);
-        Log.i("color","Factor Verde "+factorg);
-        Log.i("color","Factor Azul "+factorb);
+        //Log.i("color","Factor Rojo "+factorr);
+        //Log.i("color","Factor Verde "+factorg);
+        //Log.i("color","Factor Azul "+factorb);
         for (int i = 0; i < vertice.size(); i++) {
             puntocolor p = vertice.get(i);
                 if ((alea && rnd.nextInt(100)<50) || !alea){

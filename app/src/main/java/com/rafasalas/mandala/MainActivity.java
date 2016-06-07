@@ -28,6 +28,8 @@ public class MainActivity extends Activity {
     private SeekBar red, green, blue=null;
     private boolean esmuelle, tieneresistencia;
     private int valR, valG, valB;
+
+    private muestracolor muestra;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,7 @@ public class MainActivity extends Activity {
         red=(SeekBar) findViewById(R.id.r);
         green=(SeekBar) findViewById(R.id.g);
         blue=(SeekBar) findViewById(R.id.b);
+        muestra=(muestracolor)findViewById(R.id.muestra);
         esmuelle=tieneresistencia=true;
         //muelle.setChecked(true);
        // resistencia.setChecked(true);
@@ -55,6 +58,7 @@ public class MainActivity extends Activity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
             //valR = ((progress/100)*255);
                 valR = (progress*255)/100;
+                muestra.rojo =valR;
                 //Log.i("en cambio","prog "+progress);
                // Log.i("en cambio","val "+valR);
 
@@ -73,7 +77,8 @@ public class MainActivity extends Activity {
         });
         green.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                valG = (progress*255)/100;}
+                valG = (progress*255)/100;
+                muestra.verde =valG;}
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -87,8 +92,8 @@ public class MainActivity extends Activity {
         });
         blue.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                valB = (progress*255)/100;;}
-
+                valB = (progress*255)/100;;
+            muestra.azul =valB;}
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
@@ -159,6 +164,7 @@ public class MainActivity extends Activity {
                                                             dataglobal.sethaydeditos(false);
                                                             //Log.i(" en inicio","rojo "+valR);
                                                             dataglobal.setcolor(valR,valG, valB);
+
                                                             WallpaperManager wallcachas=WallpaperManager.getInstance(getApplicationContext());
                                                             try{
 

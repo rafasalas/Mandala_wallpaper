@@ -188,8 +188,8 @@ public class wallpaper extends WallpaperService {
                     muelle=!muelle;
                     if(rnd.nextInt(100)<50){resistencia=!resistencia;}
                 }
-                Log.i("  contador","vlaor "+contador);
-                Log.i("  contador", "resistencia " + resistencia);
+                //Log.i("  contador","vlaor "+contador);
+                //Log.i("  contador", "resistencia " + resistencia);
                 //rebota.draw(canvas, width, height);
                 lienzotrabajo.mandy.actualiza(muelle, resistencia);
                 lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).35, false);

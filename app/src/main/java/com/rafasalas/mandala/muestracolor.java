@@ -2,6 +2,7 @@ package com.rafasalas.mandala;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -28,9 +29,34 @@ public class muestracolor extends View {
     @Override
 
     protected void onDraw(Canvas canvas){
-
+        Paint paint;
+        paint = new Paint();
+        int centerX,centerY;
+        centerX=centerY=0;
+       // float angulobase=((float) Math.PI)/4;
+        float angulobase=45;
+        float angulo=0;
         //canvas.drawARGB(255, rojo, verde, azul);
-        canvas.drawARGB(255, rojo, verde, azul);
+        float width=canvas.getWidth();
+        float height=canvas.getHeight();
+        float radius=40;
+        canvas.drawARGB(255, 0,0,0);
+        paint.setARGB(255, rojo, verde, azul);
+        paint.setStrokeWidth(2);
+
+        for (int i=0;i<8;i++){
+            canvas.save();
+
+            canvas.translate(width/2, height/2);
+            canvas.rotate(angulo);
+            canvas.drawCircle(radius,0,7, paint);
+
+            canvas.drawLine(0,0, radius,0,paint);
+            canvas.restore();
+            angulo=angulo+angulobase;
+
+        }
+        //canvas.drawARGB(255, rojo, verde, azul);
         invalidate();
 
 

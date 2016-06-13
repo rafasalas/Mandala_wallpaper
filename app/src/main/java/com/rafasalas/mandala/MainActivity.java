@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
         blue=(SeekBar) findViewById(R.id.b);
         muestra=(muestracolor)findViewById(R.id.muestra);
         esmuelle=tieneresistencia=true;
+        muestra.rojo= muestra.verde= muestra.azul=255;
         //muelle.setChecked(true);
        // resistencia.setChecked(true);
         addlistenerOnButton();

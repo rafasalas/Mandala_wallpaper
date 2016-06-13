@@ -119,7 +119,7 @@ public class wallpaper extends WallpaperService {
             gravedad.normalize();
             gravedad.mult((10-mSensorZ)*50);
 
-            //This is your Accelerometer X,Y,Z values
+
             //Log.d("sensor", "X: " + mSensorX + ", Y: " + mSensorY + ", Z: " + mSensorZ);
            // Log.d("Vector", "X: " + gravedad.x + ", Y: " + gravedad.y);
         }
@@ -213,7 +213,14 @@ public class wallpaper extends WallpaperService {
             }
 
         }
-
+        @Override
+        public void onSurfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+            super.onSurfaceChanged(holder, format, width, height);
+            // store the center of the surface, so we can draw the cube in the right spot
+            // mCenterX = width/2.0f;
+            // mCenterY = height/2.0f;
+            //drawFrame();
+        }
 
 
         @Override

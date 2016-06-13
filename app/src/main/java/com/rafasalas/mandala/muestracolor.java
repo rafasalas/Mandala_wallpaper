@@ -39,7 +39,7 @@ public class muestracolor extends View {
         //canvas.drawARGB(255, rojo, verde, azul);
         float width=canvas.getWidth();
         float height=canvas.getHeight();
-        float radius=40;
+        float radius=width*0.4f;
         canvas.drawARGB(255, 0,0,0);
         paint.setARGB(255, rojo, verde, azul);
         paint.setStrokeWidth(2);
@@ -49,7 +49,7 @@ public class muestracolor extends View {
 
             canvas.translate(width/2, height/2);
             canvas.rotate(angulo);
-            canvas.drawCircle(radius,0,7, paint);
+            canvas.drawCircle(radius,0,width*0.07f, paint);
 
             canvas.drawLine(0,0, radius,0,paint);
             canvas.restore();

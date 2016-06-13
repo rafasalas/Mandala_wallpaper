@@ -17,8 +17,7 @@
         android:id="@+id/imageView"
         android:src="@drawable/imagen"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        />
+        android:layout_centerHorizontal="true" />
 
 
 
@@ -28,33 +27,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/r"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/g" />
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/Vamos"
+        android:layout_alignEnd="@+id/Vamos"
+        android:paddingTop="6dp"
+        android:progress="100" />
 
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/g"
         android:layout_below="@+id/r"
-        android:layout_marginRight="34dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/Vamos" />
+        android:layout_alignStart="@+id/r"
+        android:layout_alignEnd="@+id/r"
+        android:paddingTop="6dp"
+        android:progress="100" />
 
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/b"
         android:layout_below="@+id/g"
-        android:layout_marginRight="34dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/Vamos" />
+        android:layout_alignStart="@+id/g"
+        android:layout_alignEnd="@+id/g"
+        android:paddingTop="6dp"
+        android:progress="100" />
     <com.rafasalas.mandala.muestracolor
         android:id="@+id/muestra"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:layout_alignBottom="@+id/b"
-        android:layout_alignParentEnd="true" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -65,5 +68,61 @@
         android:layout_column="0"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cambia el color"
+        android:id="@+id/textView"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textIsSelectable="true"
+        android:textSize="15dp"
+        android:linksClickable="false"
+        android:layout_below="@+id/muestra"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rojo"
+        android:id="@+id/textView2"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textIsSelectable="true"
+        android:textSize="15dp"
+        android:linksClickable="false"
+        android:layout_below="@+id/textView"
+        android:layout_alignEnd="@+id/textView3"
+        android:paddingTop="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verde"
+        android:id="@+id/textView3"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textIsSelectable="true"
+        android:textSize="15dp"
+        android:linksClickable="false"
+        android:layout_below="@+id/r"
+        android:layout_alignParentLeft="true"
+        android:paddingTop="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Azul"
+        android:id="@+id/textView4"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textIsSelectable="true"
+        android:textSize="15dp"
+        android:linksClickable="false"
+        android:layout_below="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3"
+        android:paddingTop="6dp" />
 
 </RelativeLayout>

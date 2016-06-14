@@ -11,7 +11,7 @@ public class global extends Application{
     private boolean muelle;
     private boolean resistencia;
 
-    private int r,g,b=0;
+    private int r=255,g=255,b=255;
     //finger
 
     private int deditosx, deditosy;

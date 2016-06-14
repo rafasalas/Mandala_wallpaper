@@ -76,7 +76,7 @@ public class lienzo{
         ancla_atractor.muelle=true;
         ancla_atractor.resistencia=true;
         ancla_atractor.cuerda=false;
-        ancla_atractor.factor_rozamiento=(float).04;
+        ancla_atractor.factor_rozamiento=(float).01;
 
         ancla_atractor.kmuelle=(float).05;
         At.posicion.x=ancla_atractor.posicion.x;
@@ -87,7 +87,7 @@ public class lienzo{
         //Mandala(PVector center,int nu_vertex, int layer, int radio, int anchura, int masa_inicial, int paso_masa, boolean rozamiento, float coef_roz, boolean muelle, float kelast)
         //mandy2=new Mandala(centro, 30,12,0,25,2, 20, true, (float).005, true,(float).002);
         mandy=new Mandala(centro, 40,8,0,50,70,-8, true, (float).009, true,(float).001, width, height);
-        mandy.monocolor(93,76,119,(float).35, false);
+        //mandy.monocolor(93,76,119,(float).35, false);
        // mandy.monocolor(203,102,67,(float).35, true);
 
         //mandy2.monocolor("89E256",.55);

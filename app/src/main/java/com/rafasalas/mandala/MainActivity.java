@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
     //private Switch muelle, resistencia;
     private SeekBar red, green, blue=null;
     private boolean esmuelle, tieneresistencia;
-    private int valR, valG, valB;
+    private int valR=255, valG=255, valB=255;
 
     private muestracolor muestra;
     @Override

@@ -117,7 +117,7 @@ public class wallpaper extends WallpaperService {
             if (mSensorZ>10){mSensorZ=10;}
             gravedad.set(-mSensorX,mSensorY);
             gravedad.normalize();
-            gravedad.mult((10-mSensorZ)*50);
+            gravedad.mult((10-mSensorZ)*70);
 
 
             //Log.d("sensor", "X: " + mSensorX + ", Y: " + mSensorY + ", Z: " + mSensorZ);
@@ -192,7 +192,7 @@ public class wallpaper extends WallpaperService {
                 //Log.i("  contador", "resistencia " + resistencia);
                 //rebota.draw(canvas, width, height);
                 lienzotrabajo.mandy.actualiza(muelle, resistencia);
-                lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).35, false);
+                lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).60, false);
                 lienzotrabajo.actualiza_atractor(gravedad);
                 lienzotrabajo.draw(canvas, width, height,opcion);
                 canvas.restore();

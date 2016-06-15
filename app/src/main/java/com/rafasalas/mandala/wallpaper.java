@@ -192,7 +192,8 @@ public class wallpaper extends WallpaperService {
                 //Log.i("  contador", "resistencia " + resistencia);
                 //rebota.draw(canvas, width, height);
                 lienzotrabajo.mandy.actualiza(muelle, resistencia);
-                lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).60, false);
+                //lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).60, false);
+                lienzotrabajo.mandy.spiralcolor(rojo,verde,azul);
                 lienzotrabajo.actualiza_atractor(gravedad);
                 lienzotrabajo.draw(canvas, width, height,opcion);
                 canvas.restore();

@@ -217,6 +217,57 @@ public class Mandala {
 
 
     }
+
+    void spiralcolor( int r, int g, int b){
+        //int r, g, b, factorr, factorg, factorb, el_mayor;
+        float factorr, factorg, factorb, intr,intg,intb, suprared;
+        // Color rgbcolor=new Color();
+        //Random rnd=new Random();
+        //IntDict colorbase;
+        //Color.RED
+
+        //Log.i("color","red "+r);
+
+
+        if (255-r>r) {factorr=(((float)(255-r)/(float)vertice.size()));} else {factorr=(-((float)(r-255)/(float)vertice.size()));}
+        if (255-g>g) {factorg=(((float)(255-g)/(float)vertice.size()));} else {factorg=(-((float)(g-255)/(float)vertice.size()));}
+        if (255-b>b) {factorb=(((float)(255-b)/(float)vertice.size()));} else {factorb=(-((float)(b-255)/(float)vertice.size()));}
+        Log.i("color","Factor Rojo "+factorr);
+        Log.i("color","Factor Verde "+factorg);
+       Log.i("color","Factor Azul "+factorb);
+        Log.i("color","vertices "+vertice.size());
+        Log.i("color","op rojo " );
+        intr=factorr;
+        intg=factorg;
+        intb=factorb;
+        for (int i = 0; i < vertice.size(); i++) {
+            puntocolor p = vertice.get(i);
+
+                p.r=(int)(r+intr);
+            p.g=(int)(g+intg);
+            p.b=(int)(b+intb);
+            intr=intr+factorr;
+            intg=intg+factorg;
+            intb=intb+factorb;
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 void vectorcolor(PVector direccion){}
 void actualiza (boolean esmuelle, boolean tieneresistencia){
                     for (int i = 0; i < vertice.size(); i++) {

@@ -29,6 +29,7 @@ public class wallpaper extends WallpaperService {
     private String opcion;
     private boolean muelle, resistencia;
     private int rojo, verde, azul;
+    private String tipocolor;
     //private Intent intent;
 
 
@@ -78,7 +79,7 @@ public class wallpaper extends WallpaperService {
             rojo=dataglobal.getred();
             verde=dataglobal.getgreen();
             azul=dataglobal.getblue();
-
+            tipocolor=dataglobal.gettipocolor();
             //Log.i("   en wallpaper","rojo "+rojo);
             //Log.i("butt", "hallegado " + opcion);
             contador=0;
@@ -192,8 +193,11 @@ public class wallpaper extends WallpaperService {
                 //Log.i("  contador", "resistencia " + resistencia);
                 //rebota.draw(canvas, width, height);
                 lienzotrabajo.mandy.actualiza(muelle, resistencia);
+                Log.i("  tipocolor en wall","vlaor "+tipocolor);
+                if (tipocolor.equals("Monocolor")){lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).60, false);}
+                    else{lienzotrabajo.mandy.spiralcolor2(rojo,verde,azul);}
                 //lienzotrabajo.mandy.monocolor(rojo,verde,azul,(float).60, false);
-                lienzotrabajo.mandy.spiralcolor2(rojo,verde,azul);
+                //lienzotrabajo.mandy.spiralcolor2(rojo,verde,azul);
                 lienzotrabajo.actualiza_atractor(gravedad);
                 lienzotrabajo.draw(canvas, width, height,opcion);
                 canvas.restore();

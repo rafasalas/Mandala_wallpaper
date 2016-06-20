@@ -21,8 +21,8 @@ import android.widget.Switch;
 
 public class MainActivity extends Activity {
 
-    private RadioGroup grupotipo;
-    private RadioButton radiotipo;
+    private RadioGroup grupocolor;
+    private RadioButton tipocolor;
     private Button vamos;
     //private Switch muelle, resistencia;
     private SeekBar red, green, blue=null;
@@ -140,7 +140,7 @@ public class MainActivity extends Activity {
 
     public void addlistenerOnButton(){
 
-                                //grupotipo = (RadioGroup) findViewById(R.id.Grupotipo);
+                                grupocolor = (RadioGroup) findViewById(R.id.tipocolor);
                                 vamos = (Button) findViewById(R.id.Vamos);
 
        vamos.setOnClickListener(new OnClickListener() {
@@ -149,15 +149,17 @@ public class MainActivity extends Activity {
                                                         public void onClick(View v) {
 
                                                                 // get selected radio button from radioGroup
-                                                                //int selectedId = grupotipo.getCheckedRadioButtonId();
+                                                               int selectedId = grupocolor.getCheckedRadioButtonId();
 
                                                                 // find the radiobutton by returned id
-                                                                //radiotipo = (RadioButton) findViewById(selectedId);
-                                                           //String clase = radiotipo.getText().toString();
+                                                                tipocolor = (RadioButton) findViewById(selectedId);
+                                                           String clase = tipocolor.getText().toString();
                                                            // Log.i("butt", "Selecionado " + selectedId);
                                                             //Log.i("butt", "Selecionado " + radiotipo.getText());
                                                             final global dataglobal = (global) getApplicationContext();
                                                             dataglobal.settipo("Circulos");
+                                                            Log.i("tipocolor","vlaor "+clase);
+                                                            dataglobal.settipocolor(clase);
                                                             dataglobal.setmuelle(esmuelle);
                                                             dataglobal.setresistencia(tieneresistencia);
                                                             dataglobal.setdeditosx(0);

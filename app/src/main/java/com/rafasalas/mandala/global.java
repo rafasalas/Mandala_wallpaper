@@ -8,6 +8,7 @@ import android.app.Application;
 public class global extends Application{
 
     private String tipo;
+    private String tipocolor;
     private boolean muelle;
     private boolean resistencia;
 
@@ -42,6 +43,19 @@ public class global extends Application{
     public void settipo(String atipo) {
 
         tipo = atipo;
+
+    }
+    public String gettipocolor() {
+
+        return tipocolor;
+    }
+
+
+
+
+    public void settipocolor(String atipo) {
+
+        tipocolor = atipo;
 
     }
 

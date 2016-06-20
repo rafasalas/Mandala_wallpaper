@@ -122,9 +122,12 @@ public class Mandala {
                 switch (opcion) {
                     //triangulo vacio
                    default:
-                   canvas.drawLine(Vtemp1.posicion.x,Vtemp1.posicion.y,Vtemp_half.posicion.x,Vtemp_half.posicion.y, paint);
-                   canvas.drawLine(Vtemp_half.posicion.x,Vtemp_half.posicion.y, Vtemp2.posicion.x,Vtemp2.posicion.y,paint);
-                   canvas.drawLine(Vtemp2.posicion.x,Vtemp2.posicion.y,Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
+                  // canvas.drawLine(Vtemp1.posicion.x,Vtemp1.posicion.y,Vtemp_half.posicion.x,Vtemp_half.posicion.y, paint);
+                   //canvas.drawLine(Vtemp_half.posicion.x,Vtemp_half.posicion.y, Vtemp2.posicion.x,Vtemp2.posicion.y,paint);
+                   //canvas.drawLine(Vtemp2.posicion.x,Vtemp2.posicion.y,Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
+                       canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.25, paint);
+                       paint.setStrokeWidth(masa/10);
+                       canvas.drawLine(Vtemp_half.posicion.x,Vtemp_half.posicion.y, Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
                     break;
                     // triangulo vacio
                     //triangulo lleno
@@ -145,7 +148,8 @@ public class Mandala {
                     //circle
                     canvas.drawCircle(Vtemp1.posicion.x,Vtemp1.posicion.y, Vtemp1.masa*(float)0.25, paint);
                         paint.setStrokeWidth(masa/10);
-                    canvas.drawLine(Vtemp_half.posicion.x,Vtemp_half.posicion.y, Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
+                    //canvas.drawLine(Vtemp_half.posicion.x,Vtemp_half.posicion.y, Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
+                        canvas.drawLine(Vtemp2.posicion.x,Vtemp2.posicion.y, Vtemp1.posicion.x,Vtemp1.posicion.y,paint);
                     //circle
                     break;
                     //aquare

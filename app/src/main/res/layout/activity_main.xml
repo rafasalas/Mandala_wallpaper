@@ -39,8 +39,8 @@
 
     <com.rafasalas.mandala.muestracolor
         android:id="@+id/muestra"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         android:layout_marginTop="39dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
@@ -48,14 +48,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change color"
+        android:text="Change base color"
         android:id="@+id/textView"
         android:singleLine="true"
         android:textColor="@android:color/white"
         android:textIsSelectable="true"
         android:textSize="15dp"
         android:linksClickable="false"
-        android:layout_marginTop="22dp"
         android:layout_below="@+id/muestra"
         android:layout_alignParentStart="true" />
 
@@ -150,5 +149,35 @@
         android:singleLine="true"
         android:padding="10dp"
         android:capitalize="sentences" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_above="@+id/Vamos"
+        android:layout_alignParentEnd="false"
+        android:layout_below="@+id/textView4"
+        android:id="@+id/tipocolor"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ramp"
+            android:id="@+id/ramp"
+            android:checked="true"
+            android:textColor="@android:color/white"
+            android:layout_weight="0.50" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monocolor"
+            android:id="@+id/mono"
+
+            android:textColor="@android:color/white"
+            android:layout_weight="0.50" />
+    </RadioGroup>
 
 </RelativeLayout>

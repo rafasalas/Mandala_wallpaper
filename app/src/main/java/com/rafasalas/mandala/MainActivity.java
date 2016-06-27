@@ -21,7 +21,7 @@ import android.widget.Switch;
 
 public class MainActivity extends Activity {
 
-    private RadioGroup grupocolor;
+  private RadioGroup grupocolor;
     private RadioButton tipocolor;
     private Button vamos;
     //private Switch muelle, resistencia;
@@ -46,6 +46,10 @@ public class MainActivity extends Activity {
         red=(SeekBar) findViewById(R.id.r);
         green=(SeekBar) findViewById(R.id.g);
         blue=(SeekBar) findViewById(R.id.b);
+
+        grupocolor = (RadioGroup) findViewById(R.id.tipocolor);
+
+
         muestra=(muestracolor)findViewById(R.id.muestra);
         esmuelle=tieneresistencia=true;
         muestra.rojo= muestra.verde= muestra.azul=255;
@@ -60,6 +64,11 @@ public class MainActivity extends Activity {
             //valR = ((progress/100)*255);
                 valR = (progress*255)/100;
                 muestra.rojo =valR;
+
+
+
+
+
                 //Log.i("en cambio","prog "+progress);
                // Log.i("en cambio","val "+valR);
 
@@ -133,14 +142,44 @@ public class MainActivity extends Activity {
 
         //   }
         // });
+
+        grupocolor.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup arg0, int id) {
+                switch (id) {
+                    case -1:
+                        //Log.v(TAG, "Choices cleared!");
+                        break;
+                    case R.id.ramp:
+                        muestra.ramp=true;
+                    break;
+                    case R.id.mono:
+                        muestra.ramp=true;
+                        break;
+
+                }
+            }
+        });
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
 
 
 
 
     public void addlistenerOnButton(){
 
-                                grupocolor = (RadioGroup) findViewById(R.id.tipocolor);
+
                                 vamos = (Button) findViewById(R.id.Vamos);
 
        vamos.setOnClickListener(new OnClickListener() {

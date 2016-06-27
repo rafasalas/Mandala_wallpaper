@@ -12,7 +12,7 @@ import android.view.View;
 public class muestracolor extends View {
     private Context context;
     public int rojo, verde, azul;
-
+    public boolean ramp;
     public muestracolor(Context context, AttributeSet atributos) {
 
 
@@ -24,7 +24,7 @@ public class muestracolor extends View {
         //verde=dataglobal.getgreen();
         //azul=dataglobal.getblue();
         rojo=verde=azul=0;
-
+        ramp=true;
     }
     @Override
 

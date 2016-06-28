@@ -153,7 +153,7 @@ public class MainActivity extends Activity {
                         muestra.ramp=true;
                     break;
                     case R.id.mono:
-                        muestra.ramp=true;
+                        muestra.ramp=false;
                         break;
 
                 }

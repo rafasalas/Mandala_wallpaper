@@ -265,7 +265,7 @@ public class Mandala {
 
     void spiralcolor2( int r, int g, int b){
         //int r, g, b, factorr, factorg, factorb, el_mayor;
-        float factorr, factorg, factorb, intr,intg,intb, suprared;
+       //float factorr, factorg, factorb, intr,intg,intb, suprared;
         float hcomp, inc;
          Color rgbcolor=new Color();
         rgbcolor.rgb(r,g,b);

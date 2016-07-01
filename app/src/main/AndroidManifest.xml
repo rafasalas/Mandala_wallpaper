@@ -3,7 +3,7 @@
     package="com.rafasalas.mandala">
     <uses-feature
         android:name="android.service.wallpaper"
-        android:required="true" />
+        android:required="false" />
     <application
         android:name="com.rafasalas.mandala.global"
         android:allowBackup="true"

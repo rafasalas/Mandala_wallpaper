@@ -20,22 +20,7 @@
         android:layout_centerHorizontal="true" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="http://www.rafasalas.com"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:capitalize="none"
-        android:textColor="@android:color/white"
-        android:linksClickable="false"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:singleLine="true"
-        android:textColorLink="@color/colorAccent"
-        android:autoLink="web" />
+    
 
     <com.rafasalas.mandala.muestracolor
         android:id="@+id/muestra"

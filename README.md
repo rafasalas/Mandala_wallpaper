@@ -12,4 +12,6 @@ with the use of PVector from Processing. It works surprisingly well in Android),
 
 The result has been a curious creature, with a simple but pleasant visual presence, and with a behavior complex enough to be interesting.
 
+http://www.rafasalas.es/?type=4&section=4&id=9
+
 https://play.google.com/store/apps/details?id=com.rafasalas.mandala

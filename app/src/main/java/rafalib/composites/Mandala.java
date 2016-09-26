@@ -1,4 +1,4 @@
-package com.rafasalas.mandala;
+package rafalib.composites;
 
 /**
  * Created by salas on 02/03/2016.
@@ -22,17 +22,22 @@ import java.util.Random;
 import processing.core.PVector;
 import processing.data.IntDict;
 
+
+import rafalib.atractors.Atractor;
+import rafalib.particles.Mat_point;
+import rafalib.particles.puntocolor;
+
 public class Mandala {
-    PVector centro;
-    ArrayList <puntocolor> vertice;
-    int numerovertices, capas;
+   public PVector centro;
+     public ArrayList <puntocolor> vertice;
+    public int numerovertices, capas;
 
 
-    int radius;
-    int incremento;
-    int masa, inc_masa;
-
-    Mandala(PVector center,int nu_vertex, int layer, int radio, int anchura, int masa_inicial, int paso_masa, boolean rozamiento, float coef_roz, boolean muelle, float kelast, float limitx, float limity){
+   public  int radius;
+    public int incremento;
+    public int masa, inc_masa;
+    
+   public Mandala(PVector center,int nu_vertex, int layer, int radio, int anchura, int masa_inicial, int paso_masa, boolean rozamiento, float coef_roz, boolean muelle, float kelast, float limitx, float limity,Context context){
         centro=center;
         numerovertices=nu_vertex;
         capas=layer;
@@ -41,6 +46,7 @@ public class Mandala {
         masa=masa_inicial;
         inc_masa=paso_masa;
         int contador=0;
+
 //cuidadin
         float angulo=0, paso=(float)(2*Math.PI)/numerovertices;
         vertice = new ArrayList<puntocolor>();
@@ -76,9 +82,14 @@ public class Mandala {
         contador =0;
         //cuidadin
 
+        //temporal pa meter vector handemorico de la muerte
+
+
+        //temporal pa meter vector handemorico de la muerte
+
     }
 
-    void atraccion(Atractor atractor){
+   public  void atraccion(Atractor atractor){
         for (int i = 0; i < vertice.size(); i++) {
             puntocolor vert=vertice.get(i);
 
@@ -91,7 +102,7 @@ public class Mandala {
 
     }
 
-    void pintar(Canvas canvas, String opcion){
+  public  void pintar(Canvas canvas, String opcion){
         Paint paint;
 
         int contador=0;
@@ -177,6 +188,7 @@ public class Mandala {
 
 
                         break;
+
                 }
             }
 
@@ -185,7 +197,7 @@ public class Mandala {
 
 
     }
-    void monocolor( int r, int g, int b, float fact, boolean alea){
+   public  void monocolor( int r, int g, int b, float fact, boolean alea){
         //int r, g, b, factorr, factorg, factorb, el_mayor;
         int factorr, factorg, factorb, el_mayor;
         // Color rgbcolor=new Color();
@@ -222,7 +234,7 @@ public class Mandala {
 
     }
 
-    void spiralcolor( int r, int g, int b){
+  public   void spiralcolor( int r, int g, int b){
         //int r, g, b, factorr, factorg, factorb, el_mayor;
         float factorr, factorg, factorb, intr,intg,intb, suprared;
         // Color rgbcolor=new Color();
@@ -263,7 +275,7 @@ public class Mandala {
 
     }
 
-    void spiralcolor2( int r, int g, int b){
+  public   void spiralcolor2( int r, int g, int b){
         //int r, g, b, factorr, factorg, factorb, el_mayor;
        //float factorr, factorg, factorb, intr,intg,intb, suprared;
         float hcomp, inc;
@@ -320,8 +332,8 @@ public class Mandala {
 
 
 
-void vectorcolor(PVector direccion){}
-void actualiza (boolean esmuelle, boolean tieneresistencia){
+public  void vectorcolor(PVector direccion){}
+public  void actualiza (boolean esmuelle, boolean tieneresistencia){
                     for (int i = 0; i < vertice.size(); i++) {
                                          puntocolor vert=vertice.get(i);
 

@@ -1,4 +1,4 @@
-package com.rafasalas.mandala;
+package rafalib.particles;
 
 /**
  * Created by salas on 02/03/2016.
@@ -12,12 +12,12 @@ import java.util.Random;
 import processing.core.PVector;
 public class Mat_point {
 
-    PVector posicion, velocidad, aceleracion;
-    PVector ancla;
-    float masa, coto,  factor_rozamiento, kmuelle;
-    boolean resistencia, muelle, cuerda, boxed;
-    float limite, limitx, limity;
-    Mat_point (PVector pos, float peso){
+    public PVector posicion, velocidad, aceleracion;
+    public PVector ancla;
+    public float masa, coto,  factor_rozamiento, kmuelle;
+    public boolean resistencia, muelle, cuerda, boxed;
+    public float limite, limitx, limity;
+    public Mat_point (PVector pos, float peso){
         posicion=pos;
         ancla=new PVector(posicion.x,posicion.y);
         masa=peso;
@@ -34,12 +34,12 @@ public class Mat_point {
         limitx=limity=0;
 
     }
-    void boxed( boolean isboxed, float x, float y){
+    public void boxed( boolean isboxed, float x, float y){
                         boxed=isboxed;
                         limitx=x;
                         limity=y;
         }
-    void acelerar(PVector acelerador) {
+    public void acelerar(PVector acelerador) {
         PVector a=PVector.mult(acelerador, 1/masa);
         aceleracion.add(a);
         if (muelle){
@@ -58,7 +58,7 @@ public class Mat_point {
         }
     }
 
-    void actualizar() {
+    public void actualizar() {
 
        // posicion.add(velocidad);
         if (resistencia) {
@@ -102,19 +102,3 @@ public class Mat_point {
 
 
 
-class puntocolor extends Mat_point{
-    int r,g,b,a;
-    puntocolor(PVector pos, float masa){
-        super(pos, masa);
-        Random rnd=new Random();
-        r=rnd.nextInt(255);
-        g=rnd.nextInt(255);
-        b=rnd.nextInt(255);
-        a=rnd.nextInt(125);
-    }
-
-
-
-
-
-}

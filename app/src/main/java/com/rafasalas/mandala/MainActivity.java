@@ -197,6 +197,7 @@ public class MainActivity extends Activity {
                                                             //Log.i("butt", "Selecionado " + radiotipo.getText());
                                                             final global dataglobal = (global) getApplicationContext();
                                                             dataglobal.settipo("Circulos");
+
                                                             Log.i("tipocolor","vlaor "+clase);
                                                             dataglobal.settipocolor(clase);
                                                             dataglobal.setmuelle(esmuelle);

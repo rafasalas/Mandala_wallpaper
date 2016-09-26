@@ -23,6 +23,9 @@ import android.os.Handler;
 import java.util.Random;
 
 import processing.core.PVector;
+import rafalib.composites.Mandala;
+import rafalib.atractors.Atractor;
+import rafalib.particles.Mat_point;
 
 public class wallpaper extends WallpaperService {
     private Context context;

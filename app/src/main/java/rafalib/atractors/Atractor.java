@@ -1,5 +1,4 @@
-package com.rafasalas.mandala;
-
+package rafalib.atractors;
 /**
  * Created by salas on 02/03/2016.
  */
@@ -23,19 +22,19 @@ import processing.data.IntDict;
 
 public class Atractor {
 
-    PVector posicion, origen_icono;
-    float sentido;
-    int tipo_atractor;
-    int interaccion;
+    public PVector posicion, origen_icono;
+    public float sentido;
+    public int tipo_atractor;
+     public int interaccion;
     Random rnd=new Random();
-    Atractor (int clase){
+    public Atractor (int clase){
         posicion=new PVector(0,0);
         interaccion=0;
         sentido=-1;
         tipo_atractor=clase;
         origen_icono=new PVector (0,0);
     }
-    PVector fuerza (PVector posicionobjeto){
+    public PVector fuerza (PVector posicionobjeto){
 
         PVector f=posicionobjeto.get();
         f.sub(posicion);
@@ -60,7 +59,7 @@ public class Atractor {
         f.mult(sentido);
         return f;
     }
-    void visible(Canvas canvas){
+    public void visible(Canvas canvas){
         Paint paint;
 
         //int contador=0;

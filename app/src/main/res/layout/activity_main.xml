@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true" />
 
 
-    
+
 
     <com.rafasalas.mandala.muestracolor
         android:id="@+id/muestra"

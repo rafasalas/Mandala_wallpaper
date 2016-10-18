@@ -15,8 +15,9 @@ public class Mat_point {
     public PVector posicion, velocidad, aceleracion;
     public PVector ancla;
     public float masa, coto,  factor_rozamiento, kmuelle;
-    public boolean resistencia, muelle, cuerda, boxed;
+    public boolean resistencia, muelle, cuerda, boxed,eterna;
     public float limite, limitx, limity;
+    public int lifespan;
     public Mat_point (PVector pos, float peso){
         posicion=pos;
         ancla=new PVector(posicion.x,posicion.y);
@@ -32,6 +33,8 @@ public class Mat_point {
         limite=50;
         boxed=false;
         limitx=limity=0;
+        eterna = false;
+        lifespan=0;
 
     }
     public void boxed( boolean isboxed, float x, float y){
@@ -59,7 +62,7 @@ public class Mat_point {
     }
 
     public void actualizar() {
-
+        if (eterna==true){lifespan--;}
        // posicion.add(velocidad);
         if (resistencia) {
             PVector friccion=new PVector(velocidad.x,velocidad.y);
@@ -95,7 +98,7 @@ public class Mat_point {
         }}
 
 
-
+    public boolean muerta(){if (lifespan<0){return true;}else {return false;}}
 
 
 }

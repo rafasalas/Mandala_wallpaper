@@ -4,6 +4,8 @@
     <uses-feature
         android:name="android.service.wallpaper"
         android:required="false" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <application
         android:name="com.rafasalas.mandala.global"
         android:allowBackup="true"

@@ -12,6 +12,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
+import android.media.audiofx.Visualizer;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.ResultReceiver;
@@ -33,6 +35,7 @@ public class wallpaper extends WallpaperService {
     private boolean muelle, resistencia;
     private int rojo, verde, azul;
     private String tipocolor;
+    private Visualizer mVisualizer;
     //private Intent intent;
 
 
@@ -98,6 +101,7 @@ public class wallpaper extends WallpaperService {
             lienzotrabajo=new lienzo(context,width,height);
 
             handler = new Handler();
+            init_music();
         }
 
         //funciones acelerometro
@@ -244,5 +248,55 @@ public class wallpaper extends WallpaperService {
 
 
     }
+///////
+private void init_music(){
+    final global dataglobal = (global) getApplicationContext();
+    mVisualizer = new Visualizer(0);
+    mVisualizer.setEnabled(false);
+
+    mVisualizer.setCaptureSize(128);
+
+    Visualizer.OnDataCaptureListener captureListener = new Visualizer.OnDataCaptureListener()
+    {
+        @Override
+        public void onWaveFormDataCapture(Visualizer visualizer, byte[] bytes,
+                                          int samplingRate)
+        { float sum=0;
+
+            for (int i = 0; i < bytes.length; i++) {
+                sum=sum+(float)bytes[i];
+            }
+            //if (sum<-16383){sum=1;}else{sum=sum/1000;}
+            if (sum<-12000 || sum>12000){sum=1;}else{sum=sum/1000;}
+
+            dataglobal.setIntensity(sum);
+            Log.v("sumatorio"," "+sum);
+        }
+
+        @Override
+        public void onFftDataCapture(Visualizer visualizer, byte[] bytes,
+                                     int samplingRate)
+        {
+            Log.v("fft", " " + bytes.length+bytes[0] + " "+bytes[60] + " " + bytes[125]);
+        }
+    };
+
+    mVisualizer.setDataCaptureListener(captureListener,
+            Visualizer.getMaxCaptureRate() / 2, true, true);
+
+    // Enabled Visualizer and disable when we're done with the stream
+
+    mVisualizer.setEnabled(true);
 
 }
+
+
+    public void release()
+    {
+        mVisualizer.release();
+    }
+
+}
+
+//////////////
+

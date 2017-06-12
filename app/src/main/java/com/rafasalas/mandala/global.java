@@ -13,6 +13,9 @@ public class global extends Application{
     private boolean resistencia;
 
     private int r=255,g=255,b=255;
+    private float intensity;
+
+
     //finger
 
     private int deditosx, deditosy;
@@ -89,7 +92,10 @@ public class global extends Application{
     public int getgreen(){return g;}
     public int getblue(){return b;}
 
-
+//musica, musica
+    public void setIntensity(float Inten){intensity=Inten;}
+    public float getIntensity(){return intensity;}
+    //musica, musica
 
 
 }

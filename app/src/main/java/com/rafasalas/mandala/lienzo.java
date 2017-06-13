@@ -89,7 +89,8 @@ public class lienzo{
         //llamamos al mandala
         //Mandala(PVector center,int nu_vertex, int layer, int radio, int anchura, int masa_inicial, int paso_masa, boolean rozamiento, float coef_roz, boolean muelle, float kelast)
         //mandy2=new Mandala(centro, 30,12,0,25,2, 20, true, (float).005, true,(float).002);
-       mandy=new Mandala(centro, 40,8,0,50,70,-8, true, (float).009, true,(float).001, width, height,context);
+       mandy=new Mandala(centro, 40,6,0,50,70,-8, true, (float).009, true,(float).001, width, height,context);
+       // mandy=new Mandala(centro, 20,3,0,50,70,-8, true, (float).009, true,(float).001, width, height,context);
         //mandy=new Mandala(centro, 50,10,0,40,5,+8, true, (float).01, true,(float).001, width, height);
         //mandy.monocolor(93,76,119,(float).35, false);
        // mandy.monocolor(203,102,67,(float).35, true);
@@ -120,6 +121,7 @@ public class lienzo{
            finger.posicion.y=dataglobal.getdeditosy();
            mandy.atraccion(finger);
             }
+            At.sentido=-1-dataglobal.getIntensity();
         mandy.atraccion(At);
        // mandy2.atraccion(At);
         //dibujamos mandala
